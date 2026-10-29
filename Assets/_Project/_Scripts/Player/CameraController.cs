@@ -37,6 +37,7 @@ public class CameraController : MonoBehaviour
         playerBody.Rotate(Vector3.up * mouseX);
     }
 
-    private void OnEnable() => controls.Player.Enable();
-    private void OnDisable() => controls.Player.Disable();
+    private void OnEnable() => controls?.Player.Enable();
+    private void OnDisable() => controls?.Player.Disable();
+    private void OnDestroy() => controls?.Dispose();
 }
