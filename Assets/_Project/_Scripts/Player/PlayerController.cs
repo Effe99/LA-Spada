@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
         characterController.SimpleMove(move * speed);
     }
 
-    private void OnEnable() => controls.Player.Enable();
-    private void OnDisable() => controls.Player.Disable();
+    private void OnEnable() => controls?.Player.Enable();
+    private void OnDisable() => controls?.Player.Disable();
+    private void OnDestroy() => controls?.Dispose();
 }
